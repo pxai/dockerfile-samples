@@ -1,5 +1,6 @@
 FROM openjdk:alpine
+MAINTAINER Pello Altadill
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp
-RUN javac Main.java
-CMD ["java", "Main"]
+RUN javac -d . src/io/pello/docker/Main.java
+CMD ["java", "io.pello.docker.Main"]

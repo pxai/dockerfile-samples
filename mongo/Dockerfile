@@ -2,9 +2,9 @@
 FROM mongo
 MAINTAINER Pello Altadill
 
-# WE copy an internal dir
-# and we use it as a volume
-VOLUME mongostore:/data
+# With this, we plan to use data/db as external storage
+VOLUME ["/data/db"]
+WORKDIR /data
 
 EXPOSE 27017:27017
 

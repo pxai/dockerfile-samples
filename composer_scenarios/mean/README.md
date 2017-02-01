@@ -1,7 +1,17 @@
-# Docker Compose Scenario: LAMP
-Two containers linked with Docker Composer
--nimmis/apache-php5  : php5 with mysql
--mysql
+# Docker Compose Scenario: MEAN
+Three containers linked with Docker Composer
+-node:boron
+-mongo
+-nginx
+
+# node + express
+Node.js project with express and mongoose
+
+# nginx
+Nginx with load balancing
+
+# mongodb
+Mongodb database
 
 Just run:
 ```

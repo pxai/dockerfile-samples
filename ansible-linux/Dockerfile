@@ -1,7 +1,7 @@
 from debian:jessie
 
 run apt-get update && \
-    apt-get install -y ansible ssh && \
+    apt-get install -y ssh && \
     rm -rf /var/lib/apt/lists/*
 
 add ./docker-ansible.pub /docker-ansible.pub

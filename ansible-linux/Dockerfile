@@ -7,7 +7,6 @@ run apt-get update && \
 
 # This will add keys and necessary config
 add ./docker-ansible.pub /docker-ansible.pub
-add ./config/ansible.cfg /etc/ansible/ansible.cfg
 add ./entrypoint.sh /entrypoint.sh
 
 entrypoint ["/entrypoint.sh"]

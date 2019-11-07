@@ -3,6 +3,11 @@ Simple linux image with python/ansible/ssh access, ready to be managed with ansi
 This linux can be run and you can try ansible playbooks on it.
 The docker machine stays alive so you can manually check if commands ran correctly.
 
+## Generate ssh keys
+If you want to be able to run playbooks through ssh, it's convenient to allow direct access.
+First execute create-ssh-keys.sh and copy the private file to your $HOME/.ssh dir
+
+
 ## Building
 ```bash
 docker build -t my-ansible-image . 
@@ -15,7 +20,7 @@ docker run --net host -v /home/pello/.ssh:/hostssh -dti  --name my-container-for
 
 ## Logging in
 ```
-ssh localhost
+ssh root@localhost
 ```
 
 Or with docker exec:

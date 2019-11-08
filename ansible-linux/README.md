@@ -28,6 +28,12 @@ Or with docker exec:
 docker exec -ti <container-id> bash
 ```
 
+## Running playbooks
+Now from your host machine, you can launch this recipes against your docker container
+```
+ansible all -i "localhost," -m raw -a "apt-get install -y python-minimal"
+ansible-playbook -i "localhost," playbook-file.yml
+
 ## Removing
 
 ```bash

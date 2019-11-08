@@ -6,13 +6,8 @@ mkdir -p /root/.ssh
 
 cat /docker-ansible.pub >> /root/.ssh/authorized_keys
 
-# ansible all -i "localhost," -m raw -a "apt-get install -y python-minimal"
-# ansible-playbook -i "localhost," "$@"
-
-mv /hostssh/authorized_keys.bak /hostssh/authorized_keys
-
-# We start ssh
+# We start ssh on the container
 /etc/init.d/ssh start
 
-# If you want to start a shell from the beginning
+# And we start a shell.
 /bin/bash

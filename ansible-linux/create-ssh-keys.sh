@@ -1,8 +1,14 @@
 #!/bin/bash
 
 HOMEDIR=${HOME}
-KEYNAME=docker-ansible  # This name is used in Dockerfile, be careful
+KEYNAME="docker-ansible"  # This name is used in Dockerfile, be careful
 
-mkdir -p ${HOMEDIR}/.ssh 
-ssh-keygen -t rsa -f ${HOMEDIR}/.ssh/${KEYNAME} -P ""
-cp ${HOMEDIR}/.ssh/${KEYNAME}.pub . && echo OK, public key copied and ready!!
+echo Creating keys in ${HOMEDIR}/.ssh
+
+mkdir -p ${HOMEDIR}/.ssh  &&  echo "Created .ssh" || echo ".ssh directory exists"
+ssh-keygen -t rsa -f ${HOMEDIR}/.ssh/${KEYNAME} -P "" && echo "Key created!!"
+chmod 600 ${HOMEDIR}/.ssh/${KEYNAME}*
+
+cp -p ${HOMEDIR}/.ssh/${KEYNAME}.pub . && echo OK, public key copied and ready!!
+
+#ssh-keygen -R localhost  # If needed

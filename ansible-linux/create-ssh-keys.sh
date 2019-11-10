@@ -11,4 +11,6 @@ chmod 600 ${HOMEDIR}/.ssh/${KEYNAME}*
 
 cp -p ${HOMEDIR}/.ssh/${KEYNAME}.pub . && echo OK, public key copied and ready!!
 
-#ssh-keygen -R localhost  # If needed
+# If you have trouble in your host to access the docker container, try
+# ssh-keygen -R localhost 
+# ssh-add

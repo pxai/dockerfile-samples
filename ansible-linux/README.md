@@ -10,17 +10,27 @@ First execute create-ssh-keys.sh and copy the private file to your $HOME/.ssh di
 
 ## Building
 ```bash
-docker build -t my-ansible-image . 
+docker build -t my-ansible-image .
  ```
 
 ## Running:
 ```bash
-docker run --net host -v /home/pello/.ssh:/hostssh -dti  --name my-container-for-ansible my-ansible-image 
+docker run -p 22:22 -dti  --name my-container-for-ansible my-ansible-image
+```
+
+With other options
+```bash
+docker run --net host -v /home/pello/.ssh:/hostssh -dti  --name my-container-for-ansible my-ansible-image
 ```
 
 ## Logging in
 ```
 ssh root@localhost
+```
+
+Then you can try:
+```
+ansible-playbook -i localhost -b  playbooks/echo.yml
 ```
 
 Or with docker exec:

@@ -27,6 +27,9 @@ RUN yarn --version
 
 RUN rails new app
 
-RUN rails server
+WORKDIR /var/app
 
 EXPOSE 3000:3000
+
+# Start the main process.
+CMD ["rails", "server", "-b", "0.0.0.0"]
